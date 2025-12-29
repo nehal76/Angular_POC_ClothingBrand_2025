@@ -1,0 +1,22 @@
+
+<div class="container py-5">
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let category of categories"></div><div class="col-md-4" *ngFor="let category of categories">
+      <div class="card category-card h-100">
+        <img
+          [src]="category.image"
+          class="card-img-top"
+          [alt]="category.name"
+        />
+        <div class="card-body text-center">
+          <!-- <h5 class="card-title"></h5> -->
+          <button type="button" routerLink="/shopping" class="btn btn-light">{{ category.name}}</button>
+       
+        </div>
+        <div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<h1>Contact us</h1>
+<form style="width: 22rem" class="container mt-3">
+  <!-- Name input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="form5Example1" class="form-control" />
+    <label class="form-label" for="form5Example1">Name</label>
+  </div>
+
+  <!-- Email input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="email" id="form5Example2" class="form-control" />
+    <label class="form-label" for="form5Example2">Email address</label>
+  </div>
+
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input
+      class="form-check-input me-2"
+      type="checkbox"
+      value=""
+      id="form5Example3"
+      checked
+    />
+    <label class="form-check-label" for="form5Example3">
+      I have read and agree to the terms
+    </label>
+  </div>
+
+  <!-- Submit button -->
+  <button
+    data-mdb-ripple-init
+    type="button"
+    class="btn btn-primary btn-block mb-4"
+    (click)="clickEvent()"
+  >
+    Submit
+  </button>
+</form>
+
+<input [(ngModel)]="name" placeholder="Enter your name" />
+<p>Hello, {{ name }}!</p>
+
+<h3>Binding Types</h3>
+
+<p>Event Binding</p>
+
+<button class="btn btn-block" (click)="Clickme($event)">Click Here</button>
+
+<div style="text-align: center">
+  <h1>ngClass Attribute</h1>
+  <div>
+    <button
+      [ngClass]="{ 'btn-primary': isActive, 'btn-secondary': !isActive }"
+      (click)="toggleActive()"
+    >
+      {{ isActive ? "Active" : "Inactive" }}
+    </button>
+  </div>
+  <br>
+  <div style="text-align: center">
+    <h1>ngStyle Attribute Example</h1>
+    <div [ngStyle]="{'background-color': isActive ? 'red': 'green' }">
+Hello Active
+    </div>
+  </div>
+</div>

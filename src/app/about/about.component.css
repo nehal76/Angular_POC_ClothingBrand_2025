@@ -1,0 +1,82 @@
+.about-page {
+  font-family: "Poppins", sans-serif;
+  /* background-color: #6c757d; */
+  width: 100%;
+  margin: auto;
+  height: auto;
+
+  
+
+  .tagline {
+    color: #6c757d;
+    font-size: 1.25rem;
+  }
+
+  img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  .value-card {
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    h4 {
+      font-weight: 600;
+    }
+    p {
+      color: #555;
+    }
+  }
+
+  .btn-dark {
+    background-color: #000;
+    border-radius: 50px;
+    &:hover {
+      background-color: #444;
+    }
+  }
+
+  .value-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    height: 180px;
+    /* background-color: #f0d9c1 ; */
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      background-color: #f8f9fa;
+    }
+
+    i {
+      transition: color 0.3s ease;
+    }
+
+    &:hover i {
+      color: #000;
+    }
+  }
+}
+.footer {
+  background-color: #DCDCDC;
+  width: 100%;
+  margin: auto;
+  padding: 0%;
+}
+
+.brand-title{
+  padding-top: 20px;
+}
+
+.brand-value{
+  height: auto;
+  width: 100%;
+  padding: auto;
+  margin: auto;
+}

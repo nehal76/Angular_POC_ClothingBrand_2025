@@ -1,0 +1,71 @@
+<div
+  class="d-flex min-vh-100"
+  style="
+    background: url('https://images.unsplash.com/photo-1602810316593-0c7f3c3f3f3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80')
+      center / cover no-repeat;
+    background-color: #222;
+    background-blend-mode: overlay;
+  "
+>
+  <div class="align-self-center text-center text-light col-md-8 offset-md-2">
+    <div *ngIf="loginService.getLoginStatus()">
+      <h1 class="welcome">Welcome, {{ loginService.currentUser }}!</h1>
+    </div>
+
+    <div class="mb-4" id="nehal">
+      <h1 class="display-1 fw-bolder">Velora clothing</h1>
+    </div>
+
+    <div>
+      <p class="lead">Crafted with elegance, worn with pride.</p>
+      <p class="lead">Explore our latest collection of timeless fashion.</p>
+    </div>
+
+    <div class="mt-4">
+      <a
+        routerLink="/shopping"
+        class="btn btn-light btn-lg px-4 py-2"
+        style="background-color: F"
+        >Shop Now</a
+      >
+    </div>
+
+    <!-- <div>
+      <button (click)="getProductsScreen()">get product details</button>
+     <div *ngFor="let data of productData" >
+      <p> {{data.name}}</p>
+      <img [src]="data.image" alt="{{data.name}}">
+
+     </div>
+    </div> -->
+  </div>
+</div>
+<div class="explore-heading">
+  <h1>Explore the our Latest collection</h1>
+</div>
+
+<div>
+  <h3 style="text-align: center">Taking Data with mock api using HttpClient</h3>
+
+  <button (click)="fetchDataUsingApi()" style="text-align: center"> Click Me
+    
+  </button>
+  <div style="background-color: lightgrey; text-align: center">
+      <li>
+      <ul>
+        <ol *ngFor="let user of data">
+          {{ user.id }} - {{ user.name }} - {{ user.email }} - {{user.phone}} - {{user.address}} - {{user.zip}};
+        </ol>
+      </ul>
+    </li>
+    </div>
+</div>
+<!-- <div *ngIf="data">
+  {{ data | json }}
+</div> -->
+<div>
+  {{data | json}}
+</div>
+
+<app-card />
+<app-about [message]="homeMessage()"></app-about>

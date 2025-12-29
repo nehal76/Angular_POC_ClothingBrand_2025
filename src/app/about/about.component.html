@@ -1,0 +1,90 @@
+<footer class="footer" *ngFor="let img of image">
+<!-- <h1>{{message()}}</h1>  //pass the data from parent comp to child comp using @Input -->
+<!-- <input type="text" (keyup)="checkUser()"> -->
+
+<div class="container my-6 about-page" >
+  <!-- Header -->
+  <div class="text-center mb-5">
+    <h1 class="fw-bold brand-title">{{title}}</h1>
+  
+    <p class="lead tagline">Luxury Meets Comfort, Without Breaking the Bank</p>
+  </div>
+  
+  <!-- Row 1: Image + About Text -->
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6"  >
+      <img src="{{img.img1}}" alt="About Us" class="img-fluid rounded" style="width: 80%; height: fit-content;">
+    </div>
+    <div class="col-md-6">
+      <h2 class="fw-semibold mb-3">Who We Are</h2>
+      
+      <p>
+        Velora Clothing is a modern fashion brand dedicated to redefining luxury. We believe style should be elegant,
+        comfortable, and accessible. Our collections combine premium fabrics, timeless designs, and affordability—
+        because everyone deserves to feel confident without compromise.
+      </p>
+    </div>
+  </div>
+
+  <!-- Row 2: Brand Values -->
+  <div class="row text-center mb-5 brand-value">
+    <div class="col-md-4">
+      <div class="p-4 border rounded shadow-sm value-card">
+        <i class="bi bi-gem fs-1 text-warning"></i>
+        <h4 class="mt-3">Luxury</h4>
+        <p>Crafted with premium materials for a sophisticated look.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-4 border rounded shadow-sm value-card">
+        <i class="bi bi-cloud fs-1 text-primary"></i>
+        <h4 class="mt-3">Comfort</h4>
+        <p>Designed for all-day wear without sacrificing style.
+      
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-4 border rounded shadow-sm value-card">
+        <i class="bi bi-cloud fs-1 text-primary"></i>
+        <h4 class="mt-3">Budget Friendly</h4>
+        <p>High-end fashion at prices you'll love.
+      
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: Mission -->
+  <div class="text-center mb-5" id="mission">
+    <h3 class="fw-semibold">Our Mission</h3>
+    <p class="mx-auto" style="max-width: 600px;">
+      Our mission is simple: to make luxury fashion inclusive and attainable for everyone.
+    </p>
+  </div>
+
+  <!-- Row 4: Promise -->
+  <div class="row align-items-center mb-5 sm-2">
+    <div class="col-md-6 order-md-2">
+      <img src="{{img.img2}}" alt="Our Promise" class="img-fluid" style="width: 80%; height: fit-content;">
+    </div>
+    <div class="col-md-6 order-md-1">
+      <h2 class="fw-semibold mb-3">Our Promise</h2>
+      <p>
+        Every piece from Velora Clothing is thoughtfully designed and ethically produced. We prioritize sustainability
+        and quality, ensuring your wardrobe reflects both elegance and responsibility.
+      </p>
+    </div>
+  </div>
+
+  <!-- Call-to-Action -->
+  <div class="text-center">
+    <h4 class="mb-3">Explore our latest collection and experience the Velora difference.</h4>
+    <a routerLink="/shopping" class="btn btn-dark px-4 py-2">Shop Now</a>
+  </div>
+</div>
+</footer>
+<br>
+
+
+

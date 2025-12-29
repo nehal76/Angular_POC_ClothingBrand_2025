@@ -1,0 +1,30 @@
+<h1 style="text-align: center;" *ngIf="isLogin; else isLogout">Login Succesfull
+</h1>
+<button (click)="isLogin = !isLogin">Logout</button>
+<ng-template #isLogout>
+  <h1>Logout Successful</h1>
+</ng-template>
+<button (click)="isLogin = !isLogin">Login</button>
+
+
+<button (click)="getProductsScreen()">Get you products</button>
+
+<div class="container py-5">
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let data of productData"></div><div class="col-md-4" *ngFor="let data of productData">
+      <div class="card category-card h-100">
+        <img
+          [src]="data.image"
+          class="card-img-top"
+          [alt]="data.name"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ data.name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-card ></app-card>
