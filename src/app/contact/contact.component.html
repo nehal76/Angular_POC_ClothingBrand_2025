@@ -58,11 +58,92 @@
       {{ isActive ? "Active" : "Inactive" }}
     </button>
   </div>
-  <br>
+  <br />
   <div style="text-align: center">
     <h1>ngStyle Attribute Example</h1>
-    <div [ngStyle]="{'background-color': isActive ? 'red': 'green' }">
-Hello Active
+    <div [ngStyle]="{ 'background-color': isActive ? 'red' : 'green' }">
+      Hello Active
     </div>
   </div>
+</div>
+
+<div>
+  @if(showLogin){
+  <div>
+    <h2>Login page, please Signup</h2>
+  </div>
+  } @else {
+  <div>
+    <h2>Signup Page, new User can sign up the page.</h2>
+  </div>
+  }
+
+  <button (click)="showSignup()">{{ display ? "SignUp" : "Login" }}</button>
+</div>
+
+<div>
+  @if (display == 1){
+  <div
+    style="
+      background-color: black;
+      color: azure;
+      text-align: center;
+      height: 100px;
+      width: 100px;
+    "
+  >
+    Black
+  </div>
+  } @else if(display == 2){
+  <div
+    style="
+      background-color: rgb(214, 24, 24);
+      color: azure;
+      text-align: center;
+      height: 100px;
+      width: 100px;
+    "
+  >
+    Red
+  </div>
+  } @else if(display == 3){
+  <div
+    style="
+      background-color: rgb(14, 193, 220);
+      color: azure;
+      text-align: center;
+      height: 100px;
+      width: 100px;
+    "
+  >
+    Blue
+  </div>
+  } @else(){
+  <div
+    style="
+      background-color: rgb(215, 14, 230);
+      color: azure;
+      text-align: center;
+      height: 100px;
+      width: 100px;
+    "
+  >
+    Purple
+  </div>
+  }
+  <button (click)="show(1)">Black</button>
+  <button (click)="show(2)">Red</button>
+  <button (click)="show(3)">Blue</button>
+  <button (click)="show(4)">purple</button>
+
+  <input
+    type="text"
+    (input)="searchBox($event)"
+    placeholder="search the colour..."
+  />
+</div>
+
+<div>
+  <h1>Signal Components</h1>
+  <button (click)="helloSignal()">Computed Signal value</button>
 </div>

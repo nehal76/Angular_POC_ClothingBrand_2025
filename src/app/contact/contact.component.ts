@@ -1,5 +1,5 @@
 import { CommonModule, NgClass, NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal, effect, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -68,4 +68,44 @@ export class ContactComponent {
       image: 'Ethnic_Wear_1.jpg',
     },
   ];
+   
+  showLogin = true;
+
+  showSignup (){
+    this.showLogin = !this.showLogin;
+    console.log("Toggeling is from Display", this.showLogin);
+  }
+
+   
+   
+
+  display:number = 2;
+
+  show(val:number){
+    this.display = val;
+  }
+
+  searchBox(event: Event){
+    this.display= parseInt((event.target as HTMLInputElement).value);
+    console.log("searching...",this.display);
+  }
+
+
+ x= signal(10);
+ y = signal(20);
+ z= computed(()=> this.x() + this.y());
+
+ helloSignal(){
+  console.log("the sum is:", this.z());
+  this.x.set(200);
+  console.log("sum after change the value:", this.z());
+ }
+
+ 
+
+
 }
+function sumValue(arg0: () => number) {
+  throw new Error('Function not implemented.');
+}
+
