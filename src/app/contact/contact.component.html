@@ -147,3 +147,20 @@
   <h1>Signal Components</h1>
   <button (click)="helloSignal()">Computed Signal value</button>
 </div>
+
+<div>
+  <h1>effect use in Signal</h1>
+ 
+  @if(displayHeading){
+     <h3 style="background-color: greenyellow;">Page heading</h3>
+  }
+  <p>{{effectdsplay()}}</p>
+  <button (click)="headingDisplayFunstion()">effect in Signal</button>
+</div>
+
+<div style="text-align: center;">
+  <h1 >Two Way Binding</h1>
+  <h3>{{nameTwoWayBindng}}</h3>
+  <input type="text"  [(ngModel)]="nameTwoWayBindng" placeholder="write Something to check binding......" >
+
+</div>

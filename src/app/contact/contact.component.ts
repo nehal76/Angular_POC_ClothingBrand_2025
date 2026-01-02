@@ -68,44 +68,55 @@ export class ContactComponent {
       image: 'Ethnic_Wear_1.jpg',
     },
   ];
-   
+
   showLogin = true;
 
-  showSignup (){
+  showSignup() {
     this.showLogin = !this.showLogin;
-    console.log("Toggeling is from Display", this.showLogin);
+    console.log('Toggeling is from Display', this.showLogin);
   }
 
-   
-   
+  display: number = 2;
 
-  display:number = 2;
-
-  show(val:number){
+  show(val: number) {
     this.display = val;
   }
 
-  searchBox(event: Event){
-    this.display= parseInt((event.target as HTMLInputElement).value);
-    console.log("searching...",this.display);
+  searchBox(event: Event) {
+    this.display = parseInt((event.target as HTMLInputElement).value);
+    console.log('searching...', this.display);
   }
 
+  x = signal(10);
+  y = signal(20);
+  z = computed(() => this.x() + this.y());
 
- x= signal(10);
- y = signal(20);
- z= computed(()=> this.x() + this.y());
+  helloSignal() {
+    console.log('the sum is:', this.z());
+    this.x.set(200);
+    console.log('sum after change the value:', this.z());
+  }
 
- helloSignal(){
-  console.log("the sum is:", this.z());
-  this.x.set(200);
-  console.log("sum after change the value:", this.z());
- }
+  effectdsplay = signal(10);
+  displayHeading = false;
 
- 
+  constructor() {
+    effect(() => {
+      console.log('after change the value', this.effectdsplay());
+      if (this.effectdsplay() == 11) {
+        setTimeout(() => this.displayHeading = true, 2000);
+        
+      } else {
+        this.displayHeading = false;
+      }
+    });
+  }
+  headingDisplayFunstion() {
+    this.effectdsplay.set(this.effectdsplay() + 1);
+  }
 
+  // Two way Binding---------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>
+  nameTwoWayBindng = "";
 
+  // Two way Binding end---------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>
 }
-function sumValue(arg0: () => number) {
-  throw new Error('Function not implemented.');
-}
-
