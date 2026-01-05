@@ -9,27 +9,20 @@ import { LoginService } from '../Service/login.service';
   standalone: true,
   imports: [RouterLink, CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private loginService: LoginService, private router: Router){
+  constructor(private loginService: LoginService, private router: Router) {}
+  username = '';
+  password = '';
+  errorMessage = '';
 
+  onLogin() {
+    if (this.loginService.login(this.username, this.password)) {
+      this.router.navigate(['/home']);
+    } else {
+      this.errorMessage = 'Inavlid Credentials.';
+    }
+    console.log('login click', this.username, ':', this.password);
   }
-
- 
-username = '';
-password = '';
-errorMessage = '';
-
-onLogin(){
-  if(this.loginService.login(this.username, this.password)){
-    this.router.navigate(['/home']);
-  }else{
-    this.errorMessage = "Inavlid Credentials."
-  }
-  console.log("login click", this.username,":", this.password);
-  
-}
-
-
 }
