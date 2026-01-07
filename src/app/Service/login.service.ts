@@ -9,7 +9,7 @@ export class LoginService {
 
   constructor() {}
 
-  login(username: string, password: string): boolean {
+  login(username: string | any, password: string | any): boolean {
     if (username === 'admin' || username=== 'nehal' && password === '1234') {
       this.isLoggedIn = true;
       this.currentUser = username;

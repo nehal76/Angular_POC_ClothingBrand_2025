@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ShoppingpageComponent } from './shoppingpage/shoppingpage.component';
 import { LoginComponent } from './login/login.component';
+import { ParentComponent } from './parent/parent.component';
 
 
 export const routes: Routes = [
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     {path: 'login', component:LoginComponent},
+    {path: 'parent', component: ParentComponent}
     
 
 ];

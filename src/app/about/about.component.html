@@ -1,11 +1,11 @@
 <footer class="footer" *ngFor="let img of image">
-<!-- <h1>{{message()}}</h1>  //pass the data from parent comp to child comp using @Input -->
-<!-- <input type="text" (keyup)="checkUser()"> -->
+
 
 <div class="container my-6 about-page" >
   <!-- Header -->
   <div class="text-center mb-5">
     <h1 class="fw-bold brand-title">{{title}}</h1>
+    <div>{{data}}</div>
   
     <p class="lead tagline">Luxury Meets Comfort, Without Breaking the Bank</p>
   </div>
@@ -83,6 +83,7 @@
     <a routerLink="/shopping" class="btn btn-dark px-4 py-2">Shop Now</a>
   </div>
 </div>
+
 </footer>
 <br>
 

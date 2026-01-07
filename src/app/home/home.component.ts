@@ -61,4 +61,6 @@ export class HomeComponent {
 
 
   homeMessage = signal('Hello, This comes from Home!!!');
+
+  msg = "Hello nehal from parents home components"
 }

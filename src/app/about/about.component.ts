@@ -29,4 +29,6 @@ image = [
   }
 ]
 
+@Input () data: string= ' ';
+
 }

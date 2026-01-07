@@ -1,103 +1,141 @@
-<!-- <div style="text-align: center;" class="login-div">
-    <div>
-        <h3 id="login">Login</h3>
-    </div>
-    <div>
-        
-
-<form (ngSubmit)="onLogin()">
-  <input [(ngModel)]="username" name="username" placeholder="Username" required>
-  <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required>
-  <button type="submit">Login</button>
-</form>
-<p *ngIf="errorMessage" style="color:red">{{ errorMessage }}</p>
-
-    </div>
-</div> -->
-
-<div class="d-flex justify-content-center align-items-center mt-5">
-  <div class="card">
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item text-center">
-        <a
-          class="nav-link active btl"
-          id="pills-home-tab"
-          data-toggle="pill"
-          href="#"
-          role="tab"
-          aria-controls="pills-home"
-          aria-selected="true"
-          >Login</a
+<form action="" #userFormData="ngForm">
+  <div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="card">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item text-center">
+          <a
+            class="nav-link active btl"
+            id="pills-home-tab"
+            data-toggle="pill"
+            href="#"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="true"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item text-center">
+          <a
+            class="nav-link btr"
+            id="pills-profile-tab"
+            data-toggle="pill"
+            href="#pills-profile"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
+            >Signup</a
+          >
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div
+          class="tab-pane fade show active"
+          id="pills-home"
+          role="tabpanel"
+          aria-labelledby="pills-home-tab"
         >
-      </li>
-      <li class="nav-item text-center">
-        <a
-          class="nav-link btr"
-          id="pills-profile-tab"
-          data-toggle="pill"
-          href="#pills-profile"
-          role="tab"
-          aria-controls="pills-profile"
-          aria-selected="false"
-          >Signup</a
-        >
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div
-        class="tab-pane fade show active"
-        id="pills-home"
-        role="tabpanel"
-        aria-labelledby="pills-home-tab"
-      >
-        <div class="form px-4 pt-5" id="input-border">
-          <input
-            type="text"
-            name=""
-            class="form-control"
-            [(ngModel)]="username"
-            name="username"
-            placeholder="Username"
-            required
-          />
+          <div class="form px-4 pt-5" id="input-border">
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              [(ngModel)]="username"
+              name="username"
+              placeholder="Username"
+              required
+            />
+            <span
+              class="error"
+              *ngIf="userFormData.touched && userFormData.invalid"
+              style="color: red"
+              >Invalid Fields
+            </span>
 
-          <input
-            type="password"
-            name=""
-            class="form-control"
-            placeholder="Password"
-            [(ngModel)]="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-          <p *ngIf="errorMessage" style="color: red">{{ errorMessage }}</p>
-          <button (click)="onLogin()" class="btn btn-dark btn-block login">
-            Login
-          </button>
+            <input
+              type="password"
+              name=""
+              class="form-control"
+              placeholder="Password"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <p *ngIf="errorMessage" style="color: red">{{ errorMessage }}</p>
+            <button (click)="onLogin()" [disabled]="userFormData.invalid" class="btn btn-dark btn-block login">
+              Login
+            </button>
+          </div>
         </div>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-profile"
-        role="tabpanel"
-        aria-labelledby="pills-profile-tab"
-      >
-        <div class="form px-4">
-          <input type="text" name="" class="form-control" />
+        <div
+          class="tab-pane fade"
+          id="pills-profile"
+          role="tabpanel"
+          aria-labelledby="pills-profile-tab"
+        >
+          <div class="form px-4">
+            <input type="text" name="" class="form-control" />
 
-          <input type="text" name="" class="form-control" />
+            <input type="text" name="" class="form-control" />
 
-          <input
-            type="text"
-            name=""
-            class="form-control"
-            placeholder="Password"
-          />
+            <input
+              type="text"
+              name=""
+              class="form-control"
+              placeholder="Password"
+            />
 
-          <button class="btn btn-dark btn-block">Signup</button>
+            <button class="btn btn-dark btn-block">Signup</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</form>
+<span *ngIf="username"> {{ username }}</span>
+
+<div style="text-align: center">
+  <h1>Form Template -driven form</h1>
+  <form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+    <input
+      type="text"
+      required
+      name="name"
+      ngModel
+      placeholder="enter the name..."
+    />
+    <span
+      class="error"
+      *ngIf="userForm.invalid && userForm.touched"
+      style="color: red"
+    >
+      invalid fields</span
+    >
+
+    <input type="email" placeholder="email" ngModel name="email" />
+    <input type="password" placeholder="password..." ngModel name="password" />
+    <button class="btn btn-dark btn-block">Signup</button>
+  </form>
+  <br />
+
+  <!-- <h5 *ngIf="name">name: {{ name }}</h5>
+  <h5 *ngIf="email">email: {{ email }}</h5>
+  <h5 *ngIf="password">password: {{ password }}</h5> -->
+</div>
+
+
+<div style="text-align: center;">
+  <h1>Reactive Form With Validation</h1>
+  <form action="" [formGroup]="userreativeProfile" (ngSubmit)="reativeProfile()">
+    <input type="text" placeholder="Enter your name" formControlName="name" name="name">
+    <input type="text" placeholder="Enter your email"  formControlName="email">
+    <input type="password" placeholder="Enter your password" formControlName="password">
+    <button>Submit</button>
+    
+    
+    <p>username: {{userreativeProfile.get('name')?.value}}</p>
+     <p>email:  {{userreativeProfile.get('email')?.value}}</p>
+      <p>password:  {{userreativeProfile.get('password')?.value}}</p>
+  </form>
+
 </div>
