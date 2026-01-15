@@ -1,2 +1,45 @@
-<p>parent works!</p>
-<app-child [data]="message"></app-child>
+<p style="text-align: center">parent works!</p>
+<app-child (getData)="getUserData($event)"></app-child>
+
+@for (getPrintData of userPrintData; track getPrintData) {
+<div>
+  <li>
+    <ol style="border: 2px solid red">
+      {{
+        getPrintData
+      }}
+    </ol>
+  </li>
+</div>
+
+}
+<div>
+  <!-- src/app/components/product-table/product-table.component.html -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Capacity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mobile of mobileProductData">
+        <td>{{ mobile.id }}</td>
+        <td>{{ mobile.name }}</td>
+        <td>{{ mobile.data?.color }}</td>
+        <td>{{ mobile.data?.capacity }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+    <h1>3rd (Post) Api Call</h1>
+    <button (click)="parentPostApiCall()">post API</button>
+    <h3 *ngFor="let p of postCall">
+        <h5>{{p.views}}</h5>
+        <h5>{{p.title}}</h5>
+    </h3>
+</div>

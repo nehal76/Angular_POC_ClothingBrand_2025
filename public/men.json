@@ -1,0 +1,146 @@
+{
+  "posters": [
+    {
+      "id": 1,
+      "title": "Men's New Collection",
+      "image": "assets/Designer.png"
+    }
+  ],
+
+  "women_poster": [
+    {
+      "id": 345,
+      "title": "women's New Collection",
+      "image": "assets/women_poster.png"
+    }
+  ],
+
+  "women": [
+    {
+      "id": 1,
+      "name": "Denim Jacket",
+      "price": 2999,
+      "discountPrice": 1999,
+      "image": "assets/Designer.png"
+    }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "name": "Casual Shirt",
+      "price": 1499,
+      "image": "assets/men_section/Designer.png",
+      "imageUrl": "assets/Shirts.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Slim Fit Jeans",
+      "price": 1999,
+      "image": "src/assets/men_section/Designer.png",
+      "imageUrl": "assets/slim_jeans.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Formal Blazer",
+      "price": 3499,
+      "image": "assets/men_section/blazer.png",
+      "imageUrl": "assets/Blazer.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Graphic T-Shirt",
+      "price": 899,
+      "image": "assets/men_section/tshirt.png",
+      "imageUrl": "assets/Tshirt.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Leather Jacket",
+      "price": 4999,
+      "image": "assets/men_section/leather-jacket.png",
+      "imageUrl": "https://example.com/images/leather-jacket.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Chinos",
+      "price": 1799,
+      "image": "assets/men_section/chinos.png",
+      "imageUrl": "https://example.com/images/chinos.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Hoodie",
+      "price": 1299,
+      "image": "assets/men_section/hoodie.png",
+      "imageUrl": "https://example.com/images/hoodie.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Denim Jacket",
+      "price": 2799,
+      "image": "assets/men_section/denim-jacket.png",
+      "imageUrl": "https://example.com/images/denim-jacket.jpg"
+    }
+  ],
+  
+"women_products_list": [
+  {
+    "id": 1,
+    "name": "Floral Kurti",
+    "price": 1299,
+    "image": "assets/women_section/floral-kurti.png",
+    "imageUrl": "assets/Kurti.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Skinny Jeans",
+    "price": 1999,
+    "image": "assets/women_section/skinny-jeans.png",
+    "imageUrl": "assets/SkinnyJeans.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Casual Top",
+    "price": 899,
+    "image": "assets/women_section/casual-top.png",
+    "imageUrl": "assets/CasualTop.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Maxi Dress",
+    "price": 2499,
+    "image": "assets/women_section/maxi-dress.png",
+    "imageUrl": "assets/MaxiDress.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Denim Jacket",
+    "price": 2799,
+    "image": "assets/women_section/denim-jacket.png",
+    "imageUrl": "https://example.com/images/women-denim-jacket.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Palazzo Pants",
+    "price": 1499,
+    "image": "assets/women_section/palazzo.png",
+    "imageUrl": "https://example.com/images/palazzo.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Hoodie",
+    "price": 1199,
+    "image": "assets/women_section/hoodie.png",
+    "imageUrl": "https://example.com/images/women-hoodie.jpg"
+  },
+  {
+    "id": 8,
+    "name": "A-Line Skirt",
+    "price": 1699,
+    "image": "assets/women_section/a-line-skirt.png",
+    "imageUrl": "https://example.com/images/a-line-skirt.jpg"
+  }
+]
+
+}

@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --surface: #ffffff;     /* white */
+  --bg-light: #f3f4f6;    /* light gray background */
+  --bg-muted: #e5e7eb;    /* border/hover */
+  --text-primary: #111827;/* dark text for readability */
+  --text-muted: #6b7280;  /* secondary text */
+  --shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+  --shadow-hover: 0 16px 40px rgba(17, 24, 39, 0.12);
+}

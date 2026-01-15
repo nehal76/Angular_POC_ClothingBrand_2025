@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-light light-navbar shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">Velora</a>
+    <a class="navbar-brand fw-bold text-uppercase" routerLink="/home">Velora</a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -12,58 +14,41 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Category 
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Category
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Men</a></li>
-            <li><a class="dropdown-item" href="#">Women</a></li>
-            <li><hr class="dropdown-divider" />Kids</li>
-            <li><a class="dropdown-item" href="#">Something Accessories here</a></li>
-             <li><a class="dropdown-item" href="#">Footwear</a></li>
+          <ul class="dropdown-menu light-dropdown shadow-sm" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/men">Men</a></li>
+            <li><a class="dropdown-item" routerLink="/women_section">Women</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" routerLink="/accessories">Accessories</a></li>
+            <li><a class="dropdown-item" routerLink="/footwear">Footwear</a></li>
           </ul>
         </li>
-        
+
+        <li class="nav-item"><a class="nav-link active" aria-current="page" routerLink="/about">About</a></li>
+        <!-- <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li> -->
+
+       
       </ul>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button
-          class="btn btn-outline-success"
-          *ngIf="!loginService.getLoginStatus()"
-          routerLink="/login"
-          type="submit"
-        >
+
+      <form class="d-flex align-items-center gap-2">
+        <input class="form-control light-search rounded-pill px-3" type="search" placeholder="Search products..." aria-label="Search" />
+
+        <button class="btn btn-light-outline rounded-pill px-3" *ngIf="!loginService.getLoginStatus()" routerLink="/login" type="submit">
           Login
         </button>
 
-        <!-- Show Logout button if user IS logged in -->
-        <button class="btn btn-danger" *ngIf="loginService.getLoginStatus()" (click)="logout()">
+        <button class="btn btn-light-strong rounded-pill px-3" *ngIf="loginService.getLoginStatus()" (click)="logout()" type="button">
           Logout
         </button>
-        <div>
-  <a routerLink="/parent">parent</a>
-</div>
+
+        <a routerLink="/parent" class="btn btn-light-soft rounded-pill px-3">Parent</a>
       </form>
     </div>
   </div>

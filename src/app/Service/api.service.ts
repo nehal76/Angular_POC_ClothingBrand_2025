@@ -4,17 +4,6 @@ import axios from 'axios';
 
 
 export interface User {
-  // "id": 1,
-  //   "name": "Reuben Schimmel",
-  //   "company": "Grady, Hauck and Wiza",
-  //   "username": "Devin80",
-  //   "email": "Bertram.Satterfield28@hotmail.com",
-  //   "address": "977 Quarry Lane",
-  //   "zip": "00532-9967",
-  //   "state": "Kansas",
-  //   "country": "Guernsey",
-  //   "phone": "962-877-0832 x08761",
-  //   "photo": "https://json-server.dev/ai-profiles/70.png
 
   id:number,
   name: string,
@@ -39,4 +28,36 @@ export class APIService {
   fetchApiData() {
     return this.http.get<User[]>('https://fake-json-api.mock.beeceptor.com/users');
   }
+
+  mobilePhoneData(){
+    return this.http.get('https://api.restful-api.dev/objects');
+    console.log("api call from API Service", this.mobilePhoneData());
+    
+  }
+
+  anOtherApiCall(){
+    return this.http.get('https://api.restful-api.dev/objects');
+    console.log("another api icalling from", this.anOtherApiCall);
+  }
+
+  postApiCall(){
+    return this.http.delete('http://localhost:3000/posts');
+  }
+
+  menApiCall(){
+    return this.http.get('http://localhost:3000/products');
+  }
+  menPosterApiCall(){
+    return this.http.get('http://localhost:3000/posters');
+  }
+
+  womenProductApiCall(){
+    return this.http.get('http://localhost:3000/women_products_list');
+  }
+  womenPosterApiCall(){
+    return this.http.get('http://localhost:3000/women_poster');
+  }
+
+
+
 }

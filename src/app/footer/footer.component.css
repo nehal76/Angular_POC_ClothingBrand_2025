@@ -1,0 +1,106 @@
+.container-fluid {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  background-color: #111;
+}
+
+.container div {
+  padding: 0%;
+  margin: auto;
+  /* background-color: #f1f1f1; */
+  /* border: 1px solid black; */
+  /* padding: 10px; */
+
+  /* text-align: center; */
+}
+
+/* 1st part */
+
+.useful-part {
+  background-color: #111; /* Black background */
+  color: #ccc; /* Gray text */
+  padding: 20px;
+}
+
+.useful-part h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-Links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-Links ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.footer-Links ul li:hover {
+  color: #fff; /* Hover effect */
+  cursor: pointer;
+}
+
+.footer-copywright {
+  padding-top: 70px;
+}
+
+/* 2nd part */
+.recommended-heading {
+  color: #ccc;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.card {
+  height: 500px; /* Fixed card height */
+  margin: auto;
+  display: flex;
+  background-color: #ccc;
+  border-radius: 10%;
+}
+
+.fixed-img {
+  height: 100px; /* Fixed image height */
+  object-fit: cover; /* Crop image nicely */
+}
+
+/* form */
+h1 {
+  text-align: center;
+  color: #ccc;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+}
+
+.btn-secondary {
+  background-color: gray;
+  color: white;
+  padding: 10px;
+}
+
+.scrollToTop-container {
+  display: flexbox;
+  grid: auto auto / auto auto auto auto;
+  padding-top: 20px;
+  text-align: end;
+  /* background-color: rgb(62, 224, 224); */
+}
+.scrollToTop-button {
+  border-radius: 20px;
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+}
+.scrollToTop-button:hover {
+  background-color: #d8cdc8; /* Darker shade on hover */
+  transform: scale(1.05);
+}
+

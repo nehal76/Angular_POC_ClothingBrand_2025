@@ -3,10 +3,13 @@ import { LoginComponent } from '../login/login.component';
 import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { LoginService } from '../Service/login.service';
+import { HomeComponent } from '../home/home.component';
+import { MenSectionComponent } from '../shoppingpage/men-section/men-section.component';
+import { WomenSectionComponent } from '../shoppingpage/women-section/women-section.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [LoginComponent, RouterLink, NgIf],
+  imports: [LoginComponent, RouterLink, NgIf,MenSectionComponent, WomenSectionComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })

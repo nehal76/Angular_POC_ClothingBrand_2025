@@ -6,6 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ShoppingpageComponent } from './shoppingpage/shoppingpage.component';
 import { LoginComponent } from './login/login.component';
 import { ParentComponent } from './parent/parent.component';
+import { MenSectionComponent } from './shoppingpage/men-section/men-section.component';
+import { WomenSectionComponent } from './shoppingpage/women-section/women-section.component';
 
 
 export const routes: Routes = [
@@ -17,7 +19,9 @@ export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     {path: 'login', component:LoginComponent},
-    {path: 'parent', component: ParentComponent}
+    {path: 'parent', component: ParentComponent},
+    {path: 'men', component: MenSectionComponent},
+    {path: 'women_section', component: WomenSectionComponent},
     
 
 ];

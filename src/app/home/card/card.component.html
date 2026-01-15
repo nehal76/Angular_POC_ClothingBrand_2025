@@ -1,22 +1,33 @@
 
 <div class="container py-5">
   <div class="row g-4">
-    <div class="col-md-4" *ngFor="let category of categories"></div><div class="col-md-4" *ngFor="let category of categories">
-      <div class="card category-card h-100">
-        <img
-          [src]="category.image"
-          class="card-img-top"
-          [alt]="category.name"
-        />
-        <div class="card-body text-center">
-          <!-- <h5 class="card-title"></h5> -->
-          <button type="button" routerLink="/shopping" class="btn btn-light">{{ category.name}}</button>
-       
+    <!-- One *ngFor only -->
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let category of categories">
+      <div class="card category-card h-100" tabindex="0" [attr.aria-label]="category.name">
+        <div class="category-media">
+          <img
+            [src]="category.image"
+            [alt]="category.name"
+            class="card-img-top category-img"
+            loading="lazy"
+            decoding="async"
+          />
+          <!-- <span class="category-chip" *ngIf="category.badge">{{ category.badge }}</span> -->
         </div>
-        <div>
-           
+
+        <div class="card-body text-center">
+          <h5 class="category-title" [title]="category.name">{{ category.name }}</h5>
+
+          <!-- If you want dynamic routes: [routerLink]="['/shopping', category.slug]" -->
+          <button type="button"
+                  class="btn btn-category"
+                  routerLink="/shopping"
+                 >
+            Explore
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
+

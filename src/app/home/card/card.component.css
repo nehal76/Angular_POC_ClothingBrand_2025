@@ -1,20 +1,96 @@
+
+/* Theme tokens (if not already defined globally) */
+:root {
+  --surface: #ffffff;
+  --bg-light: #f3f4f6;
+  --bg-muted: #e5e7eb;
+  --text-primary: #111827;
+  --text-muted: #6b7280;
+  --shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+  --shadow-hover: 0 16px 40px rgba(17, 24, 39, 0.12);
+}
+
+/* Card */
 .category-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  border-radius: 10px;
+  border: 1px solid var(--bg-muted);
+  background: var(--surface);
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  outline: none;
 }
 
-.category-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+.category-card:hover,
+.category-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: #d1d5db;
 }
 
-.card-img-top {
-  height: 250px;
+/* Media area keeps consistent image aspect ratio */
+.category-media {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff, var(--bg-light));
+}
+
+.category-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;      /* keeps grid tidy; fallback below */
   object-fit: cover;
+  display: block;
+  transition: transform 280ms ease, filter 280ms ease;
 }
-/* .btn.btn-light{
-  transition: background-color 0.3s ease;
-  
-} */
+
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 4 / 3) {
+  .category-img { height: 220px; }
+}
+
+.category-card:hover .category-img,
+.category-card:focus-visible .category-img {
+  transform: scale(1.04);
+  filter: contrast(1.05);
+}
+
+/* Optional badge chip */
+.category-chip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--bg-light);
+  border: 1px solid var(--bg-muted);
+  color: var(--text-primary);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Body */
+.category-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin: 6px 0 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Button: clean light-gray style to match theme */
+.btn-category {
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  border: 1px solid var(--bg-muted);
+  background: var(--surface);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.btn-category:hover,
+.btn-category:focus {
+  background: var(--bg-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}

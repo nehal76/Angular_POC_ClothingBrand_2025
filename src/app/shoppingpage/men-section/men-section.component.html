@@ -1,0 +1,74 @@
+
+<!-- Poster -->
+<section class="poster-wrap-light">
+  <div class="poster" *ngFor="let p of poster">
+    <img
+      [src]="p?.image"
+      [alt]="p?.title || 'Men Collection Poster'"
+      class="poster-img"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="poster-overlay-light">
+      <h2 class="poster-title">{{ p?.title || "Men's Collection" }}</h2>
+      <p class="poster-sub">New season • Fresh fits</p>
+    </div>
+  </div>
+</section>
+
+<!-- Product List -->
+<section class="men-section-light">
+  <div class="container-xl">
+    <div class="section-header-light">
+      <h3>Men’s Products</h3>
+      <p class="section-sub">Curated picks for everyday comfort and style</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of products">
+        <div class="product-card-light" tabindex="0" [attr.aria-label]="item.name">
+          <div class="product-media-light">
+            <img
+              [src]="item.imageUrl"
+              [alt]="item.name"
+              class="product-img-light"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="badge-new-light" *ngIf="item.isNew">New</span>
+          </div>
+
+          <div class="product-body-light">
+            <h6 class="product-title-light" [title]="item.name">{{ item.name }}</h6>
+
+            <div class="product-meta-light">
+              <span class="product-price-light">₹{{ item.price | number: '1.0-0' }}</span>
+              <span class="product-strike-light" *ngIf="item.mrp && item.mrp > item.price">
+                ₹{{ item.mrp | number: '1.0-0' }}
+              </span>
+              <span class="product-discount-light" *ngIf="item.mrp && item.mrp > item.price">
+                -{{ ((1 - item.price / item.mrp) * 100) | number: '1.0-0' }}%
+              </span>
+            </div>
+
+            <div class="product-actions-light">
+              <button class="btn btn-outline-secondary btn-sm" (click)="addToCart(item)">
+                Add to Cart
+              </button>
+              <button class="btn btn-secondary btn-sm" type="button" (click)="viewDetailsOfProduct(item)">
+                View
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional: empty state -->
+      <div class="col-12" *ngIf="!products || products.length === 0">
+        <div class="empty-state-light">
+          <p>No products to display right now. Please check back soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

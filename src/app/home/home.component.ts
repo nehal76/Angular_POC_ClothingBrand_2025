@@ -7,11 +7,12 @@ import { ProductsService } from '../Service/products.service';
 import { LoginService } from '../Service/login.service';
 import { APIService } from '../Service/api.service';
 import { count } from 'rxjs';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, CardComponent, AboutComponent],
+  imports: [CommonModule, RouterLink, CardComponent, AboutComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -47,7 +48,7 @@ export class HomeComponent {
   fetchDataUsingApi() {
     this.apiservice.fetchApiData().subscribe((data) => {
       this.data = data;
-      console.log('Data is coming from API service not Product service');
+      console.log('Data is coming from API service not Product service', data);
     });
   }
 

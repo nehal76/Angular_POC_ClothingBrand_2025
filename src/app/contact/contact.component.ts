@@ -119,4 +119,6 @@ export class ContactComponent {
   nameTwoWayBindng = "";
 
   // Two way Binding end---------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  brand = " Hello This is Velora, a Brand Clothing."
 }

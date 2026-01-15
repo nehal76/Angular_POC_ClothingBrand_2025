@@ -1,0 +1,98 @@
+
+/* Navbar */
+.light-navbar {
+  background: var(--surface); /* white */
+  border-bottom: 1px solid var(--bg-muted);
+  padding: 0.8rem 1rem;
+}
+
+.light-navbar .navbar-brand {
+  color: var(--text-primary) !important;
+  letter-spacing: 0.8px;
+  font-size: 1.25rem;
+}
+
+.light-navbar .nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  transition: color 180ms ease, transform 180ms ease;
+}
+.light-navbar .nav-link:hover,
+.light-navbar .nav-link:focus {
+  color: var(--text-primary) !important;
+  transform: translateY(-1px);
+}
+
+/* Dropdown */
+.light-dropdown {
+  background: var(--surface);
+  border: 1px solid var(--bg-muted);
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+.light-dropdown .dropdown-item {
+  border-radius: 8px;
+  color: var(--text-primary);
+  transition: background 140ms ease, transform 140ms ease;
+}
+.light-dropdown .dropdown-item:hover,
+.light-dropdown .dropdown-item:focus {
+  background: var(--bg-light);
+  transform: translateX(2px);
+}
+
+/* Search input */
+.light-search {
+  border: 1px solid var(--bg-muted);
+  background: var(--surface);
+  color: var(--text-primary);
+}
+.light-search::placeholder { color: #9ca3af; }
+.light-search:focus {
+  outline: none;
+  border-color: #cbd5e1; /* slightly darker focus ring */
+  box-shadow: 0 0 0 0.2rem rgba(203, 213, 225, 0.35);
+}
+
+/* Buttons */
+.btn-light-outline {
+  color: var(--text-primary);
+  border: 1px solid var(--bg-muted);
+  background: var(--surface);
+  transition: all 160ms ease;
+}
+.btn-light-outline:hover {
+  background: var(--bg-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn-light-soft {
+  color: var(--text-primary);
+  border: 1px solid var(--bg-muted);
+  background: var(--bg-light);
+  transition: all 160ms ease;
+}
+.btn-light-soft:hover {
+  background: #eef2f7; /* tiny shade change */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Keep logout visible but within theme */
+.btn-light-strong {
+  background: #e11d48;      /* rose red (you can switch to gray if you want pure monochrome) */
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.btn-light-strong:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(225, 29, 72, 0.35);
+}
+
+/* Optional: pure monochrome logout
+.btn-light-strong { background: #374151; }
+.btn-light-strong:hover { box-shadow: 0 8px 18px rgba(55, 65, 81, 0.25); }
+*/

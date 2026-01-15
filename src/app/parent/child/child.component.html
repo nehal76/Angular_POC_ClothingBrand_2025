@@ -1,2 +1,17 @@
-<p>child works!{{data}}</p>
+<p style="text-align: center; text-decoration: dotted">
+  child works! and paasing the data from Parent Component
+</p>
 
+<div>
+  <h3>Another Api Call from Child Component</h3>
+  @for (item of data; track item) {
+  <li>{{ item.name }}</li>
+  <li>{{ item.year }}</li>
+  }
+
+  <h2 *ngFor="let item2 of data">
+    {{ item2.name }}
+  </h2>
+
+  <button (click)="helloApi()">other Product</button>
+</div>
