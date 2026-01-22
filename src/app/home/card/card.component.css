@@ -94,3 +94,20 @@
   transform: translateY(-2px);
   box-shadow: var(--shadow);
 }
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* padding-top: 40px; */
+  padding-bottom: 10px;
+  color: black;
+  
+}
+
+.bar {
+  width: 4px;
+  height: 28px;
+  background: #e50914;
+  border-radius: 2px;
+}

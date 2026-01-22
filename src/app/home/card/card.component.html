@@ -1,9 +1,18 @@
-
 <div class="container py-5">
+  
+  <h4 class="section-title container">
+    <span class="bar"></span>
+    Explore the category
+  </h4>
   <div class="row g-4">
     <!-- One *ngFor only -->
+
     <div class="col-12 col-sm-6 col-md-4" *ngFor="let category of categories">
-      <div class="card category-card h-100" tabindex="0" [attr.aria-label]="category.name">
+      <div
+        class="card category-card h-100"
+        tabindex="0"
+        [attr.aria-label]="category.name"
+      >
         <div class="category-media">
           <img
             [src]="category.image"
@@ -16,13 +25,16 @@
         </div>
 
         <div class="card-body text-center">
-          <h5 class="category-title" [title]="category.name">{{ category.name }}</h5>
+          <h5 class="category-title" [title]="category.name">
+            {{ category.name }}
+          </h5>
 
           <!-- If you want dynamic routes: [routerLink]="['/shopping', category.slug]" -->
-          <button type="button"
-                  class="btn btn-category"
-                  routerLink="/shopping"
-                 >
+          <button
+            type="button"
+            class="btn btn-category"
+            routerLink="{{ category.routes }}"
+          >
             Explore
           </button>
         </div>
@@ -30,4 +42,3 @@
     </div>
   </div>
 </div>
-

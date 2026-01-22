@@ -22,6 +22,41 @@
   color: #ccc; /* Gray text */
   padding: 20px;
 }
+.footer-ul {
+  list-style: none;
+  padding: 0%;
+  margin: 0%;
+}
+/* .bar-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8%;
+  width: 4px;
+  background-color: #e50914; 
+  border-radius: 2px;
+} */
+
+.footer-ul li{
+  position: relative;
+  padding-left: 10px;
+  margin: 6px 0;
+
+}
+
+.footer-ul li::before{
+  
+content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 70%;
+  background-color: #e50914; /* Netflix red */
+  border-radius: 2px;
+
+}
 
 .useful-part h3 {
   color: #fff;
@@ -103,4 +138,3 @@ h1 {
   background-color: #d8cdc8; /* Darker shade on hover */
   transform: scale(1.05);
 }
-

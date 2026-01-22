@@ -8,3 +8,6 @@
   --shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
   --shadow-hover: 0 16px 40px rgba(17, 24, 39, 0.12);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

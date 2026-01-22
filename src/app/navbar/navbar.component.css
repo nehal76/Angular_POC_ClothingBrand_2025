@@ -1,5 +1,14 @@
 
 /* Navbar */
+
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 999; /* stays above all sections */
+  display: block;
+}
+
+
 .light-navbar {
   background: var(--surface); /* white */
   border-bottom: 1px solid var(--bg-muted);
