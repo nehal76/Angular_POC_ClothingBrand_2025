@@ -51,6 +51,14 @@ export class NavbarComponent {
     // If you want to prime the flow with initial value (optional):
     // this.searchPr.setQuery(this.searchControl.value || '');
   }
+  onSearch(){
+    console.log("key is searching", this.searchControl.value);
+    this.searchControl.reset;
+    
+
+
+    
+  }
 
   logout(): void {
     this.loginService.logout();

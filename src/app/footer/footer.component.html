@@ -1,12 +1,14 @@
 <footer class="footer-dev">
-  <div class="container-fluid">
-    <div class="useful-part">
-      <div>
-        <span class="bar-line"></span>
-        <h3>Useful Links</h3>
-      </div>
+  <div class="container-headings"  >
+    <h5>Usefull Links</h5>
+    <h5 style="padding-left: 5px">Recommended Product</h5>
+    <h5 style="padding-left: 23px">Contact US</h5>
+  </div>
+  <div class="container-fluid" style="padding-top: 0; padding-top: 0;">
+    <div class="useful-part" >
+      <!-- <h3 class="footer-headings">Useful Links</h3> -->
       <div class="footer-Links">
-        <ul class="footer-ul" >
+        <ul class="footer-ul">
           <!-- <span class="bar-line"></span> -->
           <li>Home</li>
 
@@ -23,10 +25,11 @@
         <p>© 2026 Velora. All rights reserved.</p>
       </div>
     </div>
-    <div>
-      <div class="recommended-heading">
-        <h3>Recommended Products</h3>
-      </div>
+    <!-- Middle part is start -->
+
+    <div class="recommended-part">
+      <!-- <h3 class="footer-headings">Recommended Products</h3> -->
+
       <div class="recommended-products">
         <div class="row g-3 w-20 max-auto">
           <div
@@ -50,12 +53,12 @@
     </div>
 
     <div>
-      <h1>Contact us</h1>
+      <!-- <h3 class="footer-headings">Contact us</h3> -->
 
-      <form style="width: 22rem" class="container mt-3">
+      <form  (ngSubmit)="submitForm()" style="width: 22rem" class="container mt-3">
         <!-- Name input -->
         <div data-mdb-input-init class="form-outline mb-4">
-          <input type="text" id="form5Example1" class="form-control" />
+          <input type="text" id="form5Example1" class="form-control" name="name" />
           <label class="form-label" for="form5Example1" style="color: lightgray"
             >Name</label
           >
@@ -63,7 +66,7 @@
 
         <!-- Email input -->
         <div data-mdb-input-init class="form-outline mb-4">
-          <input type="email" id="form5Example2" class="form-control" />
+          <input type="email" id="form5Example2" class="form-control" name="email"/>
           <label class="form-label" for="form5Example2" style="color: lightgray"
             >Email address</label
           >
@@ -79,6 +82,7 @@
             value=""
             id="form5Example3"
             checked
+            name="terms"
           />
           <label class="form-check-label" for="form5Example3">
             I have read and agree to the terms
@@ -90,7 +94,7 @@
           data-mdb-ripple-init
           type="button"
           class="btn btn-secondary btn-block mb-4"
-          (click)="clickEvent()"
+          
         >
           Submit
         </button>

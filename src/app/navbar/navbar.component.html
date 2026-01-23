@@ -58,6 +58,8 @@
           placeholder="Search products..."
           aria-label="Search"
           [formControl]="searchControl"
+          (keyup)="onSearch()"
+          [ngModel]="searchControl.value"
         />
       </div>
 

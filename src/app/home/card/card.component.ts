@@ -4,6 +4,7 @@ import { RouterLink } from "@angular/router";
 import { MenSectionComponent } from '../../shoppingpage/men-section/men-section.component';
 import { routes } from '../../app.routes';
 import { WomenSectionComponent } from '../../shoppingpage/women-section/women-section.component';
+import { SearchserviceService } from '../../Service/searchservice.service';
 
 @Component({
   selector: 'app-card',
@@ -12,6 +13,11 @@ import { WomenSectionComponent } from '../../shoppingpage/women-section/women-se
   styleUrl: './card.component.css'
 })
 export class CardComponent {
+  
+
+  constructor(private search: SearchserviceService ){
+
+  }
   
   categories = [
     {
