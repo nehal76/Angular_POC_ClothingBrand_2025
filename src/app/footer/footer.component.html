@@ -55,50 +55,67 @@
     <div>
       <!-- <h3 class="footer-headings">Contact us</h3> -->
 
-      <form  (ngSubmit)="submitForm()" style="width: 22rem" class="container mt-3">
-        <!-- Name input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="text" id="form5Example1" class="form-control" name="name" />
-          <label class="form-label" for="form5Example1" style="color: lightgray"
-            >Name</label
-          >
-        </div>
+      
+<form #f="ngForm" (ngSubmit)="submitForm(f)" style="width: 22rem" class="container mt-3">
 
-        <!-- Email input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="email" id="form5Example2" class="form-control" name="email"/>
-          <label class="form-label" for="form5Example2" style="color: lightgray"
-            >Email address</label
-          >
-        </div>
+  <!-- Name -->
+  <div class="form-outline mb-4">
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      ngModel
+      required
+    />
+    <label class="form-label" style="color: lightgray">Name</label>
+  </div>
 
-        <textarea class="form-control" aria-label="With textarea"></textarea>
+  <!-- Email -->
+  <div class="form-outline mb-4">
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      ngModel
+      required
+    />
+    <label class="form-label" style="color: lightgray">Email address</label>
+  </div>
 
-        <!-- Checkbox -->
-        <div class="form-check d-flex justify-content-center mb-4">
-          <input
-            class="form-check-input me-2"
-            type="checkbox"
-            value=""
-            id="form5Example3"
-            checked
-            name="terms"
-          />
-          <label class="form-check-label" for="form5Example3">
-            I have read and agree to the terms
-          </label>
-        </div>
+  <!-- Message -->
+  <textarea
+    class="form-control mb-3"
+    name="message"
+    ngModel
+    placeholder="Your message"
+    required
+  ></textarea>
 
-        <!-- Submit button -->
-        <button
-          data-mdb-ripple-init
-          type="button"
-          class="btn btn-secondary btn-block mb-4"
-          
-        >
-          Submit
-        </button>
-      </form>
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input
+      class="form-check-input me-2"
+      type="checkbox"
+      name="terms"
+      ngModel
+      checked
+    />
+    <label class="form-check-label">
+      I have read and agree to the terms
+    </label>
+  </div>
+
+  <!-- ✅ SUBMIT button -->
+  <button
+    type="submit"
+    class="btn btn-secondary btn-block mb-4"
+  >
+    Submit
+  </button>
+
+</form>
+``
+
       <div class="scrollToTop-container">
         <div
           class="btn btn-secondary btn-block mb-1"

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { map, shareReplay } from 'rxjs';
-import { Observable,tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 export interface User {
   id: number;
@@ -19,8 +19,7 @@ export interface User {
 }
 
 interface product {
-  
-id: number;
+  id: number;
   name: string;
   price: number;
   image: string;
@@ -28,14 +27,13 @@ id: number;
   category?: string;
   brand?: string;
   tags?: string[];
-
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class APIService {
-  private baseUrl = 'http://localhost:3000/products'
+  private baseUrl = 'http://localhost:3000/products';
   constructor(private http: HttpClient) {}
 
   fetchApiData() {
@@ -60,11 +58,10 @@ export class APIService {
 
   menApiCall(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:3000/products').pipe(
-      tap(()=> console.log('[API] data is coming from menAPICall')),
-      map(res => res ?? []),
+      tap(() => console.log('[API] data is coming from menAPICall')),
+      map((res) => res ?? []),
       shareReplay(1),
-    )
-    
+    );
   }
   menPosterApiCall() {
     return this.http.get('http://localhost:3000/posters');
@@ -72,22 +69,29 @@ export class APIService {
 
   womenProductApiCall() {
     return this.http.get('http://localhost:3000/women_products_list').pipe(
-      tap(()=> console.log("Wome [API] data is coming")),map(res => res ?? []),
-      shareReplay(1)
+      tap(() => console.log('Wome [API] data is coming')),
+      map((res) => res ?? []),
+      shareReplay(1),
     );
   }
   womenPosterApiCall() {
     return this.http.get('http://localhost:3000/women_poster');
   }
 
-  
-getall(): Observable<any[]> {
+  getall(): Observable<any[]> {
     return this.http.get<{ products: any[] }>(`${this.baseUrl}`).pipe(
       tap(() => console.log('[API] products called', this.baseUrl)),
-      map(res => res?.products ?? []),
+      map((res) => res?.products ?? []),
       shareReplay(1),
-      
     );
   }
 
+  formsData(payload: any) {
+    return this.http.post('https://formspree.io/f/mojedlev', payload, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+  }
 }
