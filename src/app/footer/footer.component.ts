@@ -2,8 +2,10 @@ import { CommonModule, NgClass, NgStyle } from '@angular/common';
 import { Component, computed, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { APIService } from '../Service/api.service';
+import { FormspreeService } from '../Service/formspree.service';
 
 @Component({
+  standalone: true,
   selector: 'app-footer',
   imports: [CommonModule, FormsModule, NgClass, NgStyle],
   templateUrl: './footer.component.html',
@@ -14,8 +16,12 @@ export class FooterComponent {
   email = '';
   message = '';
   data: any;
+  sending = signal(false);
+  showSucces = true;
+  success = signal<string | null>(null);
+  error = signal<string | null>(null);
 
-  constructor(private formdata: APIService) {}
+  constructor(private formdata: FormspreeService) {}
 
   products = [
     {
@@ -39,50 +45,37 @@ export class FooterComponent {
   clickEvent = () => {
     console.log('clicked');
   };
+
+  
+
   submitForm(f: any) {
-    // console.log('clicked');
-    // fetch('https://formspree.io/f/mojedlev', {
-    //   method: 'post',
-
-    // body: JSON.stringify({ email: this.email, message: this.message, name: this.name})
-
-    // }).then(res => console.log(res)).catch(err => console.log("error", err));
+    this.sending.set(true);
+    this.success.set(null);
+    this.error.set(null);
+    
 
     if (!f.value) return;
-
     const payload = f.value;
 
     this.formdata.formsData(payload).subscribe({
       next: (res) => {
         this.data = res;
+        this.success.set('submitted');
+
         console.log('formspree', res);
+        this.sending.set(false);
         f.resetForm();
       },
       error: (err) => {
         console.log('error', err);
+        this.error.set("Something Wents wrong!! Please check");
+        this.sending.set(false);
+        f.resetForm()
+        f.untouched()
+        f.markAsPristine();
       },
-      // this.data = data;
-      // console.log("formData", data);
     });
   }
-
-  // submitForm(f: any) {
-  //   fetch('https://formspree.io/f/mojedlev', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(f.value)
-  //   })
-  //   .then(res => res.json())
-
-  //   .then(data => {
-  //     console.log('Success:', data);
-  //     f.reset();
-  //   })
-  //   .catch(err => console.error('Error:', err));
-  // }
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -1,11 +1,11 @@
 <footer class="footer-dev">
-  <div class="container-headings"  >
+  <div class="container-headings">
     <h5>Usefull Links</h5>
     <h5 style="padding-left: 5px">Recommended Product</h5>
     <h5 style="padding-left: 23px">Contact US</h5>
   </div>
-  <div class="container-fluid" style="padding-top: 0; padding-top: 0;">
-    <div class="useful-part" >
+  <div class="container-fluid" style="padding-top: 0; padding-top: 0">
+    <div class="useful-part">
       <!-- <h3 class="footer-headings">Useful Links</h3> -->
       <div class="footer-Links">
         <ul class="footer-ul">
@@ -55,66 +55,88 @@
     <div>
       <!-- <h3 class="footer-headings">Contact us</h3> -->
 
-      
-<form #f="ngForm" (ngSubmit)="submitForm(f)" style="width: 22rem" class="container mt-3">
+      <form
+        #f="ngForm"
+        (ngSubmit)="submitForm(f)"
+        style="width: 22rem"
+        class="container mt-3"
+      >
+        <!-- Name -->
+        <div class="form-outline mb-4">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Your Name"
+            ngModel
+            required
+          />
+          <label class="form-label" style="color: lightgray">Name</label>
+        </div>
 
-  <!-- Name -->
-  <div class="form-outline mb-4">
-    <input
-      type="text"
-      class="form-control"
-      name="name"
-      ngModel
-      required
-    />
-    <label class="form-label" style="color: lightgray">Name</label>
-  </div>
+        <!-- Email -->
+        <div class="form-outline mb-4">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Your Email"
+            ngModel
+            required
+          />
+          <label class="form-label" style="color: lightgray"
+            >Email address</label
+          >
+        </div>
 
-  <!-- Email -->
-  <div class="form-outline mb-4">
-    <input
-      type="email"
-      class="form-control"
-      name="email"
-      ngModel
-      required
-    />
-    <label class="form-label" style="color: lightgray">Email address</label>
-  </div>
+        <!-- Message -->
+        <textarea
+          class="form-control mb-3"
+          name="message"
+          ngModel
+          placeholder="Your message"
+          required
+        ></textarea>
 
-  <!-- Message -->
-  <textarea
-    class="form-control mb-3"
-    name="message"
-    ngModel
-    placeholder="Your message"
-    required
-  ></textarea>
+        <!-- Checkbox -->
+        <div
+          class="form-check d-flex justify-content-center mb-2"
+          style="padding-bottom: 20px"
+        >
+          <input
+            class="form-check-input me-2"
+            type="checkbox"
+            name="terms"
+            ngModel
+            checked
+          />
+          <label
+            class="form-check-label"
+            style="color: white; padding-right: 30px"
+          >
+            I have read and agree to the terms
+          </label>
+        </div>
 
-  <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input
-      class="form-check-input me-2"
-      type="checkbox"
-      name="terms"
-      ngModel
-      checked
-    />
-    <label class="form-check-label">
-      I have read and agree to the terms
-    </label>
-  </div>
+        <!--  SUBMIT button -->
+        <button
+          [disabled]="sending() || f.invalid"
+          type="submit"
+          class="btn btn-secondary btn-block mb-12"
+        >
+          {{ sending() ? "Sending..." : "Send" }}
+        </button>
+        <div>
+          @if (success()) {
+            <div style="color: azure">Submitted successfully</div>
+          } @else if (error()) {
+            <div style="color: azure" >error</div>
+          }
+        </div>
 
-  <!-- ✅ SUBMIT button -->
-  <button
-    type="submit"
-    class="btn btn-secondary btn-block mb-4"
-  >
-    Submit
-  </button>
-
-</form>
-``
+        <!-- <p *ngIf="success" style="color: gray;">{{success()}}</p>
+        <p *ngIf="error" style="color: gray;">{{error()}}</p> -->
+      </form>
 
       <div class="scrollToTop-container">
         <div
