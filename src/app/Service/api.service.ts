@@ -6,7 +6,7 @@ import { Observable, tap } from 'rxjs';
 
 export interface User {
   id: number; // Interface
-  name: string;
+  name: string; // interface
   company: string;
   username: string;
   email: string;
