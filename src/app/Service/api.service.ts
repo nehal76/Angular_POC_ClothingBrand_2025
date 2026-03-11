@@ -5,7 +5,7 @@ import { map, shareReplay } from 'rxjs';
 import { Observable, tap } from 'rxjs';
 
 export interface User {
-  id: number;
+  id: number; // Interface
   name: string;
   company: string;
   username: string;
