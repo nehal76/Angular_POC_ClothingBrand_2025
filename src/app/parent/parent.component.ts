@@ -25,13 +25,7 @@ export class ParentComponent {
   
   constructor(private mobileApi: APIService, private post: APIService) {}
 
-  // mobileDataRetrieve(){
-  //   this.mobileApi.mobilePhoneData().subscribe((data)=>{
-  //     this.data = data
-  //     console.log("mobile Product is calling from API Service", data);
-  //   })
-  // }
-
+  
   ngOnInit() {
     this.mobileApi.mobilePhoneData().subscribe((data: any) => {
       this.mobileProductData = data;
