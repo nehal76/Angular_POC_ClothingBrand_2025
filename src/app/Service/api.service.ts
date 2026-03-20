@@ -81,7 +81,7 @@ export class APIService {
   getall(): Observable<any[]> {
     return this.http.get<{ products: any[] }>(`${this.baseUrl}`).pipe(
       tap(() => console.log('[API] products called', this.baseUrl)),
-      map((res) => res?.products ?? []),// optional chaining
+      map((res) => res?.products ?? []),
       shareReplay(1),
     );
   }
